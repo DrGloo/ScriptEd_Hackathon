@@ -16,13 +16,13 @@ $( document ).ready(function() {
  	console.log('Function Started');
     $('#StoryBox').fadeOut();
     $('#startbutton').css('opacity', '0');
-    $('.planet').css('opacity', '0.3');
+    $('.planet').css('opacity', '1');
     console.log('Function completed');
   });
   $('.planet').on('click', function(f){
     $('#planets').fadeOut();
-    $('#game').css('opacity', '1');
-    startGame();
+    $('.dialog').fadeIn();
+    setTimeout(startGame, 10000);
   });
 });
 
@@ -150,7 +150,9 @@ enemy.moveEnemy = function() {
 
 function startGame () {
 	initGame();
-	setInterval(enemy.moveEnemy, 250);
+	setInterval(moveEnemy, 250);
+    $('#game').css('opacity', '1');
+    $('.dialog').fadeOut();
 };
 
 function setDirection (){
