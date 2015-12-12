@@ -82,7 +82,7 @@ function initGame() {
       if(enemy.health < 1) {
         enemy.el.attr("src", 'explosion.gif')
         setTimeout(function(){enemy.el.remove()}, 500);
-        alert("YOU WIN!")
+        alert("YOU WIN!, but Pluto ran away. Next time, on Dragon Ball Z!")
       }
 		}
 
