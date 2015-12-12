@@ -21,8 +21,8 @@ $( document ).ready(function() {
   });
   $('.planet').on('click', function(f){
     $('#planets').fadeOut();
-    $('#game').css('opacity', '1');
-    startGame();
+    $('.dialog').fadeIn();
+    setTimeout(startGame, 10000);
   });
 });
 
