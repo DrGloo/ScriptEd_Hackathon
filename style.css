@@ -1,3 +1,6 @@
+html {
+  font-family: 'Share Tech Mono'
+}
 body {
     background-image: url("http://www.brandongamer.com/archives/destiny/director/DTG_PlanetDetailPage_earth.jpg");
     background-repeat: no-repeat;
@@ -47,4 +50,7 @@ h1 {
   position: absolute;
   top: 10px;
   left: 10px;
+}
+#game {
+  opacity: 0;
 }
