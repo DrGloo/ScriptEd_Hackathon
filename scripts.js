@@ -59,20 +59,22 @@ function initGame() {
 	projectile.el.css("top", projectile.y);
 	laser_sound.play();
 	projectile.move = function(){
-    console.log(enemy);
-		if(!projectile.collision(enemy)){
-		if(projectile.y <= 0){
-		  projectile.el.remove();
-			clearInterval(projectile.iid);
-			player.projectile = false;
+    // console.log(enemy);
+  	if(!projectile.collision(enemy)){
+  		if(projectile.y <= 0){
+  		  projectile.el.remove();
+  			clearInterval(projectile.iid);
+  			player.projectile = false;
+  		}else{
+  			projectile.y -= projectile.speed;
+  		}
+  		projectile.el.css("top", projectile.y);
 		}else{
-			projectile.y -= projectile.speed;
-		}
-		projectile.el.css("top", projectile.y);
-		}else{
+      console.log("COLLIDED");
 			projectile.el.remove();
 			clearInterval(projectile.iid);
 			player.projectile = false;
+      enemy.el.attr("src", 'explosion.gif')
 		}
 
 	};
