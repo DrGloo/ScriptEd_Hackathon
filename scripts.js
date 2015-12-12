@@ -4,8 +4,8 @@ var y;
 var direc;
 var w; 
 var h; 
-var player;
-var enemy;
+var player = {};
+var enemy = {};
 
 function changeFont(number){
   $("h").html("font-size", number);
@@ -28,7 +28,6 @@ $( document ).ready(function() {
 
 function initGame() {
 // Daniel's Player Code
-	player = {};
 	player.el = $("#player");
 	player.x = player.el.position()["left"];
 	player.y = player.el.position()["top"];
@@ -37,16 +36,15 @@ function initGame() {
 	player.takeDamage = function(damage){
 		player.health -= damage; 
 		}
-	enemy = {};
 	enemy.el = $("#enemy");
 	enemy.x = enemy.el.position()["left"];
 	enemy.y = enemy.el.position()["top"];
 	enemy.height = 100;
 	enemy.width = 100;
-	enemy = $("#enemy");
-	x = enemy.position()["left"];
-	y = enemy.position()["top"];
-	direc = "right";
+	enemy.el = $("#enemy");
+	// x = enemy.position()["left"];
+	// y = enemy.position()["top"];
+	enemy.direc = "right";
 	w = window.innerWidth;
 	h = window.innerHeight;		
 	player.shoot = function(){
@@ -61,6 +59,7 @@ function initGame() {
 	projectile.el.css("top", projectile.y);
 	laser_sound.play();
 	projectile.move = function(){
+    console.log(enemy);
 		if(!projectile.collision(enemy)){
 		if(projectile.y <= 0){
 		  projectile.el.remove();
@@ -120,35 +119,35 @@ document.addEventListener('keydown', function(event){
 }, true);
 
 
-var move = function (xa, ya) {
+enemy.move = function (xa, ya) {
 
-  x = x + xa;
-  y = y + ya;
+  enemy.x = enemy.x + xa;
+  enemy.y = enemy.y + ya;
   
-  enemy.css("left", x);
-  enemy.css("top", y);
+  enemy.el.css("left", enemy.x);
+  enemy.el.css("top", enemy.y);
 };
 
-var moveEnemy = function() {
+enemy.moveEnemy = function() {
   setDirection();    
-  if(direc === "right"){
-    move(40,0);  
+  if(enemy.direc === "right"){
+    enemy.move(40,0);  
   }else{
-    move(-40,0);
+    enemy.move(-40,0);
   }
 };
 
 function startGame () {
 	initGame();
-	setInterval(moveEnemy, 250);
+	setInterval(enemy.moveEnemy, 250);
 };
 
 function setDirection (){
-  if(x > w - 100){
-    direc = "left";
+  if(enemy.x > w - 100){
+    enemy.direc = "left";
   }
-  if (x < 0) {
-    direc = "right";
+  if (enemy.x < 0) {
+    enemy.direc = "right";
   }
 }
 
