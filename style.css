@@ -1,4 +1,5 @@
 
+
 body {
     background-image: url("http://www.brandongamer.com/archives/destiny/director/DTG_PlanetDetailPage_earth.jpg");
     background-repeat: no-repeat;
@@ -37,7 +38,31 @@ h1 {
   height: 180px;
   opacity: 0;
   text-align: center;
-  position: fixed;
-  bottom: 120p;
-  right: ;
+}
+#planet2{
+  color: white;
+  background-color: #3366FF;
+  width: 250px;
+  height: 180px;
+  opacity: 0;
+  text-align: center;
+}
+#planet3{
+  color: white;
+  background-color: #3366FF;
+  width: 250px;
+  height: 180px;
+  opacity: 0;
+  text-align: center;
+}
+#planet4{
+  color: white;
+  background-color: #3366FF;
+  width: 250px;
+  height: 180px;
+  opacity: 0;
+  right: 0px;
+  top: 20px;
+  text-align: center;
+  position:
 }
