@@ -149,7 +149,9 @@ enemy.moveEnemy = function() {
 
 function startGame () {
 	initGame();
-	setInterval(enemy.moveEnemy, 250);
+	setInterval(moveEnemy, 250);
+    $('#game').css('opacity', '1');
+    $('.dialog').fadeOut();
 };
 
 function setDirection (){
