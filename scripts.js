@@ -16,7 +16,7 @@ $( document ).ready(function() {
  	console.log('Function Started');
     $('#StoryBox').fadeOut();
     $('#startbutton').css('opacity', '0');
-    $('.planet').css('opacity', '0.3');
+    $('.planet').css('opacity', '1');
     console.log('Function completed');
   });
   $('.planet').on('click', function(f){
