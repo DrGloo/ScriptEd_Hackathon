@@ -29,7 +29,18 @@ h1 {
     text-align: center;
 }
 #start {
+  margin-top: 50px;
   text-align: center;
+}
+
+button#startbutton {
+  font-size: 4em;
+  transition: all 0.4s;
+}
+
+button#startbutton:hover {
+  color: red;
+  cursor: pointer;
 }
 
 .planet {
