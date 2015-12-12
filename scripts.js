@@ -59,7 +59,7 @@ function initGame() {
 	projectile.speed = 15;
   	projectile.el.css("left", projectile.x);
 	projectile.el.css("top", projectile.y);
-	
+	laser_sound.play();
 	projectile.move = function(){
 		if(!projectile.collision(enemy)){
 		if(projectile.y <= 0){
