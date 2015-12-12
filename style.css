@@ -39,3 +39,12 @@ h1 {
   float: left;
   margin: 20px;
 }
+
+#enemy{
+  width:100px;
+  height:100px;
+  background-color:red;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
