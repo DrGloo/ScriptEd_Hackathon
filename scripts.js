@@ -150,7 +150,7 @@ enemy.moveEnemy = function() {
 
 function startGame () {
 	initGame();
-	setInterval(moveEnemy, 250);
+	setInterval(enemy.moveEnemy, 250);
     $('#game').css('opacity', '1');
     $('.dialog').fadeOut();
 };
