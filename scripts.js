@@ -41,6 +41,7 @@ function initGame() {
 	enemy.y = enemy.el.position()["top"];
 	enemy.height = 100;
 	enemy.width = 100;
+  enemy.health = 100;
 	enemy.el = $("#enemy");
 	// x = enemy.position()["left"];
 	// y = enemy.position()["top"];
@@ -74,7 +75,14 @@ function initGame() {
 			projectile.el.remove();
 			clearInterval(projectile.iid);
 			player.projectile = false;
-      enemy.el.attr("src", 'explosion.gif')
+      enemy.health -= 10;
+      document.getElementById("eHealth").innerHTML = enemy.health;
+      document.getElementById("eHealth").style.width = enemy.health + "px";
+
+      if(enemy.health < 1) {
+        enemy.el.attr("src", 'explosion.gif')
+        setTimeOut(500);
+      }
 		}
 
 	};
