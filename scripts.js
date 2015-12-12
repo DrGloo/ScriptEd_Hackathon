@@ -97,6 +97,41 @@ enemy.x = enemy.el.position()["left"];
 enemy.y = enemy.el.position()["top"];
 enemy.height = 100;
 enemy.width = 100;
+// wensaels Java
+
+var enemy = $("#enemy");
+var x = enemy.position()["left"];
+var y = enemy.position()["top"];
+var direc = "right";
+var w = window.innerWidth;
+var h = window.innerHeight;
+var move = function (xa, ya) {
+
+  x = x + xa;
+  y = y + ya;
+  
+  enemy.css("left", x);
+  enemy.css("top", y);
+};
+
+var moveEnemy = function() {
+  setDirection();    
+  if(direc === "right"){
+    move(40,0);  
+  }else{
+    move(-40,0);
+  }
+};
+setInterval(moveEnemy, 250);
+
+function setDirection (){
+  if(x > w - 100){
+    direc = "left";
+  }
+  if (x < 0) {
+    direc = "right";
+  }
+}
 
 
 
