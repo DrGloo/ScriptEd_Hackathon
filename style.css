@@ -2,7 +2,7 @@ html {
   font-family: 'Share Tech Mono'
 }
 body {
-    background-image: url("http://www.brandongamer.com/archives/destiny/director/DTG_PlanetDetailPage_earth.jpg");
+    background-image: url("background.png");
     background-repeat: no-repeat;
   position:fixed;
 }
@@ -22,12 +22,22 @@ header {
 
 #StoryBox {
   color: white;
-  opacity: 0.4;
   text-align: center;
+  padding: 0 150px;
 }
 h1 {
     text-align: center;
     color: black;
+}
+h2 {
+    text-align: center;
+    color: black;
+    font-size: 50px;
+}
+p {
+  font-size: 30px;
+  color: green;
+  background-color: #fff
 }
 #start {
   text-align: center;
@@ -44,7 +54,7 @@ button#startbutton:hover {
 }
 
 .planet {
-  color: white;
+  color: green;
   background-color: #3366FF;
   width: 250px;
   height: 180px;
@@ -53,7 +63,11 @@ button#startbutton:hover {
   float: left;
   margin: 20px;
 }
-
+h1 {
+    text-align: center;
+    color: black;
+    opacity: 100;
+}
 #enemy{
   width:100px;
   height:100px;
