@@ -4,26 +4,30 @@ function changeFont(number){
   $("p").html("font-size", number);
 }
 $( document ).ready(function() {
-$('#startbutton').on('click', function(e){
-  console.log('Function Started');
-  $('#StoryBox').fadeOut();
-  $('#startbutton').css('opacity', '0');
-  $('.planet').css('opacity', '0.3');
-  console.log('Function completed');
-});
+  $('#startbutton').on('click', function(e){
+ 	console.log('Function Started');
+    $('#StoryBox').fadeOut();
+    $('#startbutton').css('opacity', '0');
+    $('.planet').css('opacity', '0.3');
+    console.log('Function completed');
+  });
+  $('.planet').on('click', function(f){
+    $('#planets').fadeOut();
+    $('#game').css('opacity', '1');
+  });
 });
 
 
 
 // Daniel's Player Code
-var player = {};
-player.el = $("#player");
-player.x = player.el.position()["left"];
-player.y = player.el.position()["top"];
-player.speed = 10;
-player.health = 100;
-player.takeDamage = function(damage){
-	player.health -= damage;
+	var player = {};
+		player.el = $("#player");
+		player.x = player.el.position()["left"];
+		player.y = player.el.position()["top"];
+		player.speed = 10;
+		player.health = 100;
+		player.takeDamage = function(damage){
+			player.health -= damage;
 }
 
 // var projectile = {};
