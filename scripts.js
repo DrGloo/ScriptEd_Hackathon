@@ -81,7 +81,8 @@ function initGame() {
 
       if(enemy.health < 1) {
         enemy.el.attr("src", 'explosion.gif')
-        setTimeOut(500);
+        setTimeout(function(){enemy.el.remove()}, 500);
+        alert("YOU WIN!")
       }
 		}
 
